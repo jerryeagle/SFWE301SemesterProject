@@ -6,13 +6,19 @@ import java.awt.FontFormatException;
 
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 import javax.swing.AbstractAction;
 import javax.swing.ButtonGroup;
@@ -47,7 +53,15 @@ public class mainMenuFrame implements ActionListener{
 	ImageIcon game = new ImageIcon(getClass().getResource("game.png"));
 	JButton gameButton = new JButton(game);
 	
-mainMenuFrame(){; //Creates a Frame
+	ImageIcon website = new ImageIcon(getClass().getResource("sfwewebsite.png"));
+	
+	ImageIcon ig = new ImageIcon(getClass().getResource("ig.png"));
+	
+	ImageIcon fb = new ImageIcon(getClass().getResource("fb.png"));
+	
+	
+	
+mainMenuFrame() throws FileNotFoundException{ //Creates a Frame
 //Here is where we create and place the header Logo
 ImageIcon ualogo = new ImageIcon(getClass().getResource("ualogo.png"));
 JLabel headerlabel = new JLabel();
@@ -62,28 +76,28 @@ headerPanel.setPreferredSize(new Dimension(1600,50));
 headerPanel.setLayout(null);
 
 //Here we create and place the academics button
-academicsButton.setBounds(100,230,200,200);
+academicsButton.setBounds(100,210,200,200);
 academicsButton.setOpaque(false);
 academicsButton.setContentAreaFilled(false);
 academicsButton.setFocusable(false);
 academicsButton.addActionListener(this);
 
 //Here we create and place the engagement button
-engagementButton.setBounds(400,230,200,200);
+engagementButton.setBounds(400,210,200,200);
 engagementButton.setOpaque(false);
 engagementButton.setContentAreaFilled(false);
 engagementButton.setFocusable(false);
 engagementButton.addActionListener(this);
 
 //Here we create and place the engagement button
-quizButton.setBounds(700,230,200,200);
+quizButton.setBounds(700,210,200,200);
 quizButton.setOpaque(false);
 quizButton.setContentAreaFilled(false);
 quizButton.setFocusable(false);
 quizButton.addActionListener(this);
 
 //Here we create and place the engagement button
-gameButton.setBounds(1000,230,200,200);
+gameButton.setBounds(1000,210,200,200);
 gameButton.setOpaque(false);
 gameButton.setContentAreaFilled(false);
 gameButton.setFocusable(false);
@@ -106,7 +120,7 @@ centerlabel2.setText("<html> Tap to learn all about the<br/>"
 		+"Software Engineering Major, Minor,"
 		+"<br/> and graduate programs."
 		+ "<br/></html>");
-centerlabel2.setBounds(100,280,300,300);
+centerlabel2.setBounds(100,260,300,300);
 
 JLabel centerlabel3 = new JLabel();
 centerlabel3.setForeground(new Color(21, 36, 74));
@@ -115,16 +129,16 @@ centerlabel3.setText("<html> Tap to find ways to <br/>"
 		+"connect and get involved with"
 		+"<br/>other students and explore careers"
 		+"<br/>in software engineering.</html>");
-centerlabel3.setBounds(400,280,300,300);
+centerlabel3.setBounds(400,260,300,300);
 
 JLabel centerlabel4 = new JLabel();
-centerlabel4.setForeground(new Color(21, 36, 74));
+centerlabel4.setForeground(new Color(21, 36,74));
 centerlabel4.setFont(new java.awt.Font("Proxima Nova Reg", 0, 13));
 centerlabel4.setText("<html> Tap to test your Software<br/>"
 		+"Engineering knowledge. Don't worry,"
 		+"<br/>this won't count against your <br/>"
 		+" academic record.</html>");
-centerlabel4.setBounds(700,280,300,300);
+centerlabel4.setBounds(700,260,300,300);
 
 JLabel centerlabel5 = new JLabel();
 centerlabel5.setForeground(new Color(21, 36, 74));
@@ -133,15 +147,45 @@ centerlabel5.setText("<html> Tap to play a fun and<br/>"
 		+"interactive coding game. Designed "
 		+"<br/>by a fellow SFWE student!"
 		+"<br/></html>");
-centerlabel5.setBounds(1000,280,300,300);
+centerlabel5.setBounds(1000,260,300,300);
 
 JLabel centerlabel6 = new JLabel();
 centerlabel6.setForeground(new Color(21, 36, 74));
 centerlabel6.setFont(new java.awt.Font("Proxima Nova Reg", 0, 18));
 centerlabel6.setText("<html>“Our world is becoming more connected and automated every day, and software engineers are a critical part <br/>"
-		+ "of building the necessary technological infrastructure.”"
-		+ "<br/> -David W. Hahn, Craig M. Berge Dean of the College of Engineering.</html>");
-centerlabel6.setBounds(180,425,1200,300);
+		+ "of building the necessary technological infrastructure.” -David W. Hahn, Craig M. Berge Dean of the College of Engineering.</html>");
+centerlabel6.setBounds(180,480,1200,250);
+
+JLabel centerlabel7 = new JLabel();
+centerlabel7.setIcon(website);
+centerlabel7.setBounds(25,420,200,200);
+
+JLabel centerlabel8 = new JLabel();
+centerlabel8.setIcon(ig);
+centerlabel8.setBounds(145,420,200,200);
+
+JLabel centerlabel9 = new JLabel();
+centerlabel9.setIcon(fb);
+centerlabel9.setBounds(265,420,200,200);
+
+File announcementsFile = new File("C:\\Users\\Coulter\\Desktop\\announcements.txt"); //import announcements txt. This will need to change once txt file is uploaded on SFWE computer
+@SuppressWarnings("resource")
+Scanner scan = new Scanner(announcementsFile);
+String announcementsContent = "";
+while (scan.hasNextLine()) {
+	announcementsContent = announcementsContent.concat(scan.nextLine() + "\n");
+}
+JTextArea textArea = new JTextArea(200,100);
+JScrollPane announcescroll = new JScrollPane(textArea,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+//System.out.println(announcementsContent);
+textArea.setText(announcementsContent);
+textArea.setLineWrap(true);
+textArea.setWrapStyleWord(true);
+
+JLabel centerlabel10 = new JLabel();
+centerlabel10.add(announcescroll);
+//centerlabel10.setText(announcementsContent);
+centerlabel10.setBounds(365,420,200,100);
 
 //Here we create the center panel of the page
 JPanel centerPanel = new JPanel();
@@ -184,6 +228,10 @@ centerPanel.add(centerlabel3);
 centerPanel.add(centerlabel4);
 centerPanel.add(centerlabel5);
 centerPanel.add(centerlabel6);
+centerPanel.add(centerlabel7);
+centerPanel.add(centerlabel8);
+centerPanel.add(centerlabel9);
+centerPanel.add(centerlabel10);
 
 mainmenuframe.add(academicsButton);
 mainmenuframe.add(engagementButton);
