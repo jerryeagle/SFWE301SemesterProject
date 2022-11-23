@@ -4,11 +4,13 @@ import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
 
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -41,7 +43,7 @@ public class mainMenuFrame implements ActionListener{
 		    System.exit(0);
 		   }
 		  }
-		 };	 
+		 };
 		 
 	JFrame mainmenuframe = new JFrame();
 	
@@ -69,6 +71,7 @@ public class mainMenuFrame implements ActionListener{
 	
 	
 mainMenuFrame() throws FileNotFoundException{ //Creates a Frame
+	
 //Here is where we create and place the header Logo
 ImageIcon ualogo = new ImageIcon(getClass().getResource("ualogo.png"));
 JLabel headerlabel = new JLabel();
@@ -83,35 +86,35 @@ headerPanel.setPreferredSize(new Dimension(1600,50));
 headerPanel.setLayout(null);
 
 //Here we create and place the academics button
-academicsButton.setBounds(100,210,200,200);
+academicsButton.setBounds(100,180,200,200);
 academicsButton.setOpaque(false);
 academicsButton.setContentAreaFilled(false);
 academicsButton.setFocusable(false);
 academicsButton.addActionListener(this);
 
 //Here we create and place the engagement button
-engagementButton.setBounds(400,210,200,200);
+engagementButton.setBounds(400,180,200,200);
 engagementButton.setOpaque(false);
 engagementButton.setContentAreaFilled(false);
 engagementButton.setFocusable(false);
 engagementButton.addActionListener(this);
 
 //Here we create and place the engagement button
-quizButton.setBounds(700,210,200,200);
+quizButton.setBounds(700,180,200,200);
 quizButton.setOpaque(false);
 quizButton.setContentAreaFilled(false);
 quizButton.setFocusable(false);
 quizButton.addActionListener(this);
 
 //Here we create and place the engagement button
-gameButton.setBounds(1000,210,200,200);
+gameButton.setBounds(1000,180,200,200);
 gameButton.setOpaque(false);
 gameButton.setContentAreaFilled(false);
 gameButton.setFocusable(false);
 gameButton.addActionListener(this);
 
 //Here we create and place the engagement button
-announcementsButton.setBounds(900,500,100,100);
+announcementsButton.setBounds(900,492,100,100);
 announcementsButton.setOpaque(false);
 announcementsButton.setContentAreaFilled(false);
 announcementsButton.setFocusable(false);
@@ -120,98 +123,110 @@ announcementsButton.addActionListener(this);
 //Main heading of the page
 JLabel centerlabel1 = new JLabel();
 centerlabel1.setForeground(new Color(21, 36, 74));
-centerlabel1.setFont(new java.awt.Font("Proxima Nova Reg", 0, 18));
-centerlabel1.setText("<html><font face=\"Proxima Nova Reg\" size=\"28\"> Welcome to the Software Engineering Interactive Display</font><br/>"
-		+ "This tool will help you learn more about the software engineering programs available at the University of Arizona,"
-		+"<br/>get connected with other students through various clubs, and prepare yourself for future employment.<br/>"
+centerlabel1.setFont(new Font("Proxima Nova", Font.PLAIN, 18));
+centerlabel1.setText("<html><font face=\"Proxima Nova\" size=\"28\"> Welcome to the Software Engineering Interactive Display</font><br/>"
+		+ "<i>This tool will help you learn more about the software engineering programs available at the University of Arizona,"
+		+"<br/>get connected with other students through various clubs, and prepare yourself for future employment.</i><br/>"
 		+ "</html");
-centerlabel1.setBounds(180,0,1200,100);
+centerlabel1.setBounds(220,0,1200,100);
 
 
 //centerlables 2 - 5 are the subtitles for each button informing user what clicking the button will do
 JLabel centerlabel2 = new JLabel();
 centerlabel2.setForeground(new Color(21, 36, 74));
-centerlabel2.setFont(new java.awt.Font("Proxima Nova Reg", 0, 12));
-centerlabel2.setText("<html> Tap to learn all about the<br/>"
-		+"Software Engineering Major, Minor,"
+centerlabel2.setFont(new Font("Proxima Nova", Font.PLAIN, 14));
+centerlabel2.setText("<html> Learn all about the Software <br/>"
+		+"Engineering Major, Minor,"
 		+"<br/> and graduate programs."
 		+ "<br/></html>");
-centerlabel2.setBounds(100,235,300,300);
+centerlabel2.setBounds(110,327,200,70);
 
 JLabel centerlabel3 = new JLabel();
 centerlabel3.setForeground(new Color(21, 36, 74));
-centerlabel3.setFont(new java.awt.Font("Proxima Nova Reg", 0, 12));
-centerlabel3.setText("<html> Tap to find ways to <br/>"
-		+"connect and get involved with"
-		+"<br/>other students and explore careers"
+centerlabel3.setFont(new Font("Proxima Nova", Font.PLAIN, 14));
+centerlabel3.setText("<html> Explore ways to connect <br/>"
+		+"and get involved with other"
+		+"<br/>students and explore careers"
 		+"<br/>in software engineering.</html>");
-centerlabel3.setBounds(400,242,300,300);
+centerlabel3.setBounds(410,334,200,70);
 
 JLabel centerlabel4 = new JLabel();
 centerlabel4.setForeground(new Color(21, 36,74));
-centerlabel4.setFont(new java.awt.Font("Proxima Nova Reg", 0, 12));
-centerlabel4.setText("<html> Tap to test your Software<br/>"
-		+"Engineering knowledge. Don't worry,"
-		+"<br/>this won't count against your <br/>"
-		+" academic record.</html>");
-centerlabel4.setBounds(700,242,300,300);
+centerlabel4.setFont(new Font("Proxima Nova", Font.PLAIN, 14));
+centerlabel4.setText("<html> Test your Software Engineer <br/>"
+		+"knowledge. Don't worry, this"
+		+"<br/>won't count against your"
+		+"<br/>academic record.</html>");
+centerlabel4.setBounds(710,334,200,70);
 
 JLabel centerlabel5 = new JLabel();
 centerlabel5.setForeground(new Color(21, 36, 74));
-centerlabel5.setFont(new java.awt.Font("Proxima Nova Reg", 0, 12));
-centerlabel5.setText("<html> Tap to play a fun and<br/>"
-		+"interactive coding game. Designed "
-		+"<br/>by a fellow SFWE student!"
+centerlabel5.setFont(new Font("Proxima Nova", Font.PLAIN, 14));
+centerlabel5.setText("<html> Play a fun and interactive<br/>"
+		+"coding game. Designed by"
+		+"<br/>a fellow SFWE student!"
 		+"<br/></html>");
-centerlabel5.setBounds(1000,235,300,300);
+centerlabel5.setBounds(1010,327,200,70);
 
 //Quote at the bottom of the page
 JLabel centerlabel6 = new JLabel();
 centerlabel6.setForeground(new Color(171, 5, 32));
-centerlabel6.setFont(new java.awt.Font("Proxima Nova Reg", 0, 18));
-centerlabel6.setText("<html>“Our world is becoming more connected and automated every day, and software engineers are a critical part <br/>"
-		+ "of building the necessary technological infrastructure.” -David W. Hahn, Craig M. Berge Dean of the College of Engineering.</html>");
-centerlabel6.setBounds(180,490,1200,250);
+centerlabel6.setFont(new Font("Proxima Nova", Font.ITALIC, 16));
+centerlabel6.setText("<html>“Our world is becoming more connected and automated every day, and software engineers are a critical part of building the necessary technological infrastructure.”<br/>"
+		+ " -David W. Hahn, Craig M. Berge Dean of the College of Engineering.</html>");
+centerlabel6.setBounds(100,585,1300,50);
 
 //this is the SFWE website qr code
 JLabel centerlabel7 = new JLabel();
 centerlabel7.setIcon(website);
-centerlabel7.setBounds(300,400,200,200);
+centerlabel7.setBounds(300,390,200,200);
 
 //this is the SFWE website subtitle
 JLabel centerlabel8 = new JLabel();
 centerlabel8.setForeground(new Color(21, 36, 74));
-centerlabel8.setFont(new java.awt.Font("Proxima Nova Reg", 0, 12));
+centerlabel8.setFont(new Font("Proxima Nova", Font.PLAIN, 12));
 centerlabel8.setText("SFWE Website");
-centerlabel8.setBounds(300,550, 100 , 25);
+centerlabel8.setBounds(306,540, 100 , 25);
 
 //this is the SFWE instagram qr code
 JLabel centerlabel9 = new JLabel();
 centerlabel9.setIcon(ig);
-centerlabel9.setBounds(500,400,200,200);
+centerlabel9.setBounds(500,390,200,200);
 
 JLabel centerlabel10 = new JLabel();
 centerlabel10.setForeground(new Color(21, 36, 74));
-centerlabel10.setFont(new java.awt.Font("Proxima Nova Reg", 0, 12));
+centerlabel10.setFont(new Font("Proxima Nova", Font.PLAIN, 12));
 centerlabel10.setText("SFWE Facebook");
-centerlabel10.setBounds(500,550, 100 , 25);
+centerlabel10.setBounds(505,540, 100 , 25);
 
 //this is the SFWE facebook qr code
 JLabel centerlabel11 = new JLabel();
 centerlabel11.setIcon(fb);
-centerlabel11.setBounds(700,400,200,200);
+centerlabel11.setBounds(700,390,200,200);
 
 JLabel centerlabel12 = new JLabel();
 centerlabel12.setForeground(new Color(21, 36, 74));
-centerlabel12.setFont(new java.awt.Font("Proxima Nova Reg", 0, 12));
+centerlabel12.setFont(new Font("Proxima Nova", Font.PLAIN, 12));
 centerlabel12.setText("SFWE Instagram");
-centerlabel12.setBounds(700,550, 100 , 25);
+centerlabel12.setBounds(705,540, 100 , 25);
 
 JLabel centerlabel13 = new JLabel();
 centerlabel13.setForeground(new Color(21, 36, 74));
-centerlabel13.setFont(new java.awt.Font("Proxima Nova Reg", 0, 12));
+centerlabel13.setFont(new Font("Proxima Nova", Font.PLAIN, 12));
 centerlabel13.setText("Announcements");
-centerlabel13.setBounds(900,550, 100 , 25);
+centerlabel13.setBounds(905,540, 100 , 25);
+
+//Divider 1
+JLabel centerlabel14 = new JLabel();
+centerlabel14.setOpaque(true);
+centerlabel14.setBackground(new Color(55, 141, 189));
+centerlabel14.setBounds(200,425, 900 , 1);
+
+//Divider 2
+JLabel centerlabel15 = new JLabel();
+centerlabel15.setOpaque(true);
+centerlabel15.setBackground(new Color(55, 141, 189));
+centerlabel15.setBounds(200,575, 900 , 1);
 
 //Attempt at creating an announcements ticker from a txt file:
 
@@ -282,6 +297,8 @@ centerPanel.add(centerlabel10);
 centerPanel.add(centerlabel11);
 centerPanel.add(centerlabel12);
 centerPanel.add(centerlabel13);
+centerPanel.add(centerlabel14);
+centerPanel.add(centerlabel15);
 
 mainmenuframe.add(academicsButton);
 mainmenuframe.add(engagementButton);

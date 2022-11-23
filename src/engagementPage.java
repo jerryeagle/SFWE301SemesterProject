@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
@@ -53,34 +54,40 @@ headerlabel.setBounds(5,5,280,40);
 //Main heading of the page
 JLabel centerlabel1 = new JLabel();
 centerlabel1.setForeground(new Color(21, 36, 74));
-centerlabel1.setFont(new java.awt.Font("Proxima Nova Reg", 0, 28));
+centerlabel1.setFont(new Font("Proxima Nova", 0, 24));
 centerlabel1.setText("<html>Check out these amazing clubs and get involved with other students!<br/>"
 		+ "</html");
-centerlabel1.setBounds(250,0,1200,100);
+centerlabel1.setBounds(300,5,1200,30);
 
 //this is the SFWE statistics
 JLabel centerlabel2 = new JLabel();
 centerlabel2.setIcon(stats);
-centerlabel2.setBounds(650,360,700,330);
+centerlabel2.setBounds(650,362,700,330);
 
 //this is the SFWE discord
 JLabel centerlabel3 = new JLabel();
 centerlabel3.setIcon(discord);
-centerlabel3.setBounds(10,520,200,200);
+centerlabel3.setBounds(14,520,200,200);
 
 //this is the SFWE discord subtitle
 JLabel centerlabel4 = new JLabel();
 centerlabel4.setForeground(new Color(21, 36, 74));
-centerlabel4.setFont(new java.awt.Font("Proxima Nova Reg", 0, 12));
-centerlabel4.setText("SFWE Discord");
-centerlabel4.setBounds(20,670, 100 , 25);
+centerlabel4.setFont(new Font("Proxima Nova", 0, 12));
+centerlabel4.setText("Check us out on discord!");
+centerlabel4.setBounds(1,670, 150 , 25);
 
 JLabel centerlabel5 = new JLabel();
 centerlabel5.setForeground(new Color(21, 36, 74));
-centerlabel5.setFont(new java.awt.Font("Proxima Nova Reg", 0, 28));
-centerlabel5.setText("<html>Explore Software engineering career information below It is never too early!<br/>"
+centerlabel5.setFont(new Font("Proxima Nova", 0, 24));
+centerlabel5.setText("<html>Explore Software Engineering career information below. It is never too early!<br/>"
 		+ "</html");
-centerlabel5.setBounds(250,290,1200,100);
+centerlabel5.setBounds(300,335,1200,30);
+
+//Divider
+JLabel centerlabel6 = new JLabel();
+centerlabel6.setOpaque(true);
+centerlabel6.setBackground(new Color(55, 141, 189));
+centerlabel6.setBounds(250,300, 900 , 1);
 
 //Here we create the header
 headerPanel.setVisible(true);
@@ -88,48 +95,50 @@ headerPanel.setBackground(new Color(171, 5, 32));
 headerPanel.setPreferredSize(new Dimension(1600,50));
 headerPanel.setLayout(null);
 
-sfweclubButton.setBounds(70,140,200,200);
+//Here we create and place the sfwe club button
+sfweclubButton.setBounds(70,100,200,200);
 sfweclubButton.setOpaque(false);
 sfweclubButton.setContentAreaFilled(false);
 sfweclubButton.setFocusable(false);
 sfweclubButton.addActionListener(this);
 
-//Here we create and place the engagement button
-engrambButton.setBounds(320,140,200,200);
+//Here we create and place the engineering ambassadors button
+engrambButton.setBounds(320,100,200,200);
 engrambButton.setOpaque(false);
 engrambButton.setContentAreaFilled(false);
 engrambButton.setFocusable(false);
 engrambButton.addActionListener(this);
 
-//Here we create and place the engagement button
-informsButton.setBounds(570,140,200,200);
+//Here we create and place the informs button
+informsButton.setBounds(570,100,200,200);
 informsButton.setOpaque(false);
 informsButton.setContentAreaFilled(false);
 informsButton.setFocusable(false);
 informsButton.addActionListener(this);
 
-//Here we create and place the engagement button
-iiseButton.setBounds(820,140,200,200);
+//Here we create and place the iise/incose button
+iiseButton.setBounds(820,100,200,200);
 iiseButton.setOpaque(false);
 iiseButton.setContentAreaFilled(false);
 iiseButton.setFocusable(false);
 iiseButton.addActionListener(this);
 
-ieeeButton.setBounds(1070,140,200,200);
+//Here we create and place the ieee button
+ieeeButton.setBounds(1070,100,200,200);
 ieeeButton.setOpaque(false);
 ieeeButton.setContentAreaFilled(false);
 ieeeButton.setFocusable(false);
 ieeeButton.addActionListener(this);
 
 ////Here we create and place the handshake button
-handshakeButton.setBounds(140,470,200,200);
+handshakeButton.setBounds(170,470,200,200);
 handshakeButton.setOpaque(false);
 handshakeButton.setContentAreaFilled(false);
 handshakeButton.setFocusable(false);
 handshakeButton.addActionListener(this);
 
 ////Here we create and place the onet button
-onetButton.setBounds(390,470,200,200);
+onetButton.setBounds(420,470,200,200);
 onetButton.setOpaque(false);
 onetButton.setContentAreaFilled(false);
 onetButton.setFocusable(false);
@@ -161,6 +170,8 @@ centerPanel.add(centerlabel2);
 centerPanel.add(centerlabel3);
 centerPanel.add(centerlabel4);
 centerPanel.add(centerlabel5);
+centerPanel.add(centerlabel6);
+
 
 engagementPage.add(sfweclubButton);
 engagementPage.add(engrambButton);
