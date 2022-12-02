@@ -316,6 +316,7 @@ public void actionPerformed(ActionEvent e) {
 	if (e.getSource()== academicsButton) {
 		
 		academicsPage academicspage = new academicsPage();
+		
 	}
 		
 	else if (e.getSource()== engagementButton) {
