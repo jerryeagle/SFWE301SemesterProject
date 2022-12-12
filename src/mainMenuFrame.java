@@ -196,7 +196,7 @@ centerlabel9.setBounds(500,390,200,200);
 JLabel centerlabel10 = new JLabel();
 centerlabel10.setForeground(new Color(21, 36, 74));
 centerlabel10.setFont(new Font("Proxima Nova", Font.PLAIN, 12));
-centerlabel10.setText("SFWE Facebook");
+centerlabel10.setText("SFWE Instagram");
 centerlabel10.setBounds(505,540, 100 , 25);
 
 //this is the SFWE facebook qr code
@@ -207,7 +207,7 @@ centerlabel11.setBounds(700,390,200,200);
 JLabel centerlabel12 = new JLabel();
 centerlabel12.setForeground(new Color(21, 36, 74));
 centerlabel12.setFont(new Font("Proxima Nova", Font.PLAIN, 12));
-centerlabel12.setText("SFWE Instagram");
+centerlabel12.setText("SFWE Facebook");
 centerlabel12.setBounds(705,540, 100 , 25);
 
 JLabel centerlabel13 = new JLabel();
@@ -270,7 +270,7 @@ footerPanel.setBackground(new Color(21, 36, 74));
 footerPanel.setPreferredSize(new Dimension(1600,75));
 footerPanel.setLayout(new BorderLayout());
 
-
+//Creating the main menu frame
 mainmenuframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Exit out of program
 mainmenuframe.setExtendedState(JFrame.MAXIMIZED_BOTH); //Set frame to full screen
 mainmenuframe.setUndecorated(true); //remove top bar
@@ -280,10 +280,11 @@ mainmenuframe.setVisible(true); // Make the frame visible
 mainmenuframe.addKeyListener(exit); //When user presses esc the frame closes
 mainmenuframe.getContentPane().setBackground(Color.white); //Set background color
 
-
+//adding the header panel/label to the main menu frame
 headerPanel.add(headerlabel); //Add UA logo to header
 mainmenuframe.add(headerPanel,BorderLayout.NORTH); //Add header
 
+//adding all the information to the centerpanel
 centerPanel.add(centerlabel1);
 centerPanel.add(centerlabel2);
 centerPanel.add(centerlabel3);
@@ -300,6 +301,7 @@ centerPanel.add(centerlabel13);
 centerPanel.add(centerlabel14);
 centerPanel.add(centerlabel15);
 
+//adding the buttons to the main menu frame
 mainmenuframe.add(academicsButton);
 mainmenuframe.add(engagementButton);
 mainmenuframe.add(quizButton);
@@ -312,6 +314,7 @@ footerPanel.add(footerlabel);
 mainmenuframe.add(footerPanel,BorderLayout.SOUTH);//Add footer
 }
 @Override
+//Here is what happens when a button is pressed
 public void actionPerformed(ActionEvent e) {
 	if (e.getSource()== academicsButton) {
 		
@@ -345,5 +348,3 @@ public void actionPerformed(ActionEvent e) {
 }
 
 }
-
-

@@ -242,10 +242,6 @@ advisorLabel2.setFont(new Font("Proxima Nova", 0, 10));
 advisorLabel2.setText("Meet with an advisor");
 advisorLabel2.setBounds(16,596, 150 , 25);
 
-
-
-
-
 //Here we create the center panel of the page
 centerPanel.setVisible(true);
 centerPanel.setBackground(new Color(226, 233, 235));
